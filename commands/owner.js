@@ -1,5 +1,7 @@
+import { config } from "../config.js";
+
 export const name = "owner";
 
-export function execute(from, args, config) {
-    console.log(`[OWNER] ${from} -> Owner number is ${config.ownerNumber}`);
+export async function execute(sock, msg) {
+    await sock.sendMessage(msg.key.remoteJid, { text: `Owner: ${config.ownerNumber}` });
 }
