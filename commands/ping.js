@@ -1,5 +1,5 @@
 export const name = "ping";
 
-export function execute(from, args, config) {
-    console.log(`[PING] ${from} -> Pong!`);
+export async function execute(sock, msg) {
+    await sock.sendMessage(msg.key.remoteJid, { text: 'Pong!' });
 }
