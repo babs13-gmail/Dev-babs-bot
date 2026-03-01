@@ -1,5 +1,5 @@
 export const name = "menu";
 
-export function execute(from, args, config) {
-    console.log(`[MENU] ${from} -> Commands available: ping, menu, owner`);
+export async function execute(sock, msg) {
+    await sock.sendMessage(msg.key.remoteJid, { text: 'Commands available: ping, menu, owner' });
 }
